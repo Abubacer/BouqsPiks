@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BouqsPiks</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/aos/aos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}">
+
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
+        <!--<img src="assets/img/logo.png" alt="">-->
+        <span>BouqsPiks</span>
+        <!--<h6>Where Flowers Find Their Perfect Match!</h6>-->
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{ url_for('home') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#features">Features</a></li>
+          <li class="dropdown"><a href="#"><span>Help</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="index.html#values">How it work</a></li>
+              <li><a href="index.html#faq">F.A.Q</a></li>
+              <li><a href="index.html#faq">Support</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{{ url_for('flower_recommender') }}">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= main Section ======= -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>  
+  <!-- End main Section -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter for exclusive updates, and the latest news!</p>
+        </div>
+        <div class="col-lg-6">
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <div class="bi-flower2">
+            <span>BouqsPiks</span>
+            </div>
+          </a>
+          <p>Questions, or feedback? Contact Us</p>
+          <div class="social-links mt-3">
+            <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-3 footer-links">
+          <h4></h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">How it Work</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-3 footer-links">
+          <h4></h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Features</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">F.A.Q</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-3 footer-cont">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!--img src="assets/img/logo.png" alt=""-->
+            <span></span>
+          </a>
+          <p></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 Copyright <strong><span>BouqsPiks</span></strong>. All Rights Reserved
+      </div> 
+      </div>
+  </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-compact-up" title="Back to top"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/recommender.js') }}"></script>
+
+</body>
+
+</html>

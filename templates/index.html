@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BouqsPiks - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/aos/aos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}">
+
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!--<img src="assets/img/logo.png" alt="">-->
+        <span>BouqsPiks</span>
+        <!--<h6>Where Flowers Find Their Perfect Match!</h6>-->
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Features</a></li>
+          <li class="dropdown"><a href="#"><span>Help</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#values">How it work</a></li>
+              <li><a href="#faq">F.A.Q</a></li>
+              <li><a href="#faq">Support</a></li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{{ url_for('flower_recommender') }}">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">We Help You Find the Perfect Bouquet For Those You Hold Dear! </h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Our easy-to-use platform takes the guesswork out of flower gifting, ensuring you pick the perfect bouquet every time</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a href="{{ url_for('flower_recommender') }}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                <span>Get Started</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{{ url_for('static', filename='img/hero-img.png') }}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Who We Are</h3>
+              <h2>We want to revolutionize the way individuals gifts flowers.</h2>
+              <p>
+                Our aims to simplify the flower-buying process, making it enjoyable and stress-free. With personalized recommendations and a wide array of floral options, users can effortlessly find the perfect bouquet to convey their feelings.
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{{ url_for('static', filename='img/about.jpg') }}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>How It Work</h2>
+          <p>Our easy-to-use platform takes the guesswork out of flower gifting, ensuring you pick the perfect bouquet to express your love</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="box">
+              <img src="{{ url_for('static', filename='img/values-1.png') }}" class="img-fluid" alt="">
+              <h3>Tell Us About Your Flower Recipient</h3>
+              <p>We only need to tell us few things!.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+            <div class="box">
+              <img src="{{ url_for('static', filename='img/values-2.png') }}" class="img-fluid" alt="">
+              <h3>Browse Our Floral Recommendation</h3>
+              <p>We'll recommend bouquets that are perfectly suited for your situation.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+            <div class="box">
+              <img src="{{ url_for('static', filename='img/values-3.png') }}" class="img-fluid" alt="">
+              <h3>Choose Your Favorite and Shop</h3>
+              <p>Just pick your favorite and go purchase.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Values Section -->
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Features</h2>
+          <p>From personalized recommendations to seamless navigation, each feature is tailored to make your journey delightful and unforgettable. Explore the enchanting capabilities that set us apart and immerse yourself in the beauty of personalized flower gifting.</p>
+        </div>
+        <!-- Feature Icons -->
+        <div class="row feature-icons" data-aos="fade-up">
+          <div class="row">
+            <!--div class="col-xl-6 text-center" data-aos="fade-right" data-aos-delay="100">
+              <img src="assets/img/features-3.png" class="img-fluid p-4" alt="">
+            </div-->
+
+            <div class="d-flex content">
+              <div class="row align-self-center gy-6">
+
+                <div class="col-md-4 icon-box" data-aos="fade-up">
+                  <i class="bi-check"></i>
+                  <div>
+                    <h4>Personalized Recommendations</h4>
+                    <p>Our intelligent recommendation engine ensures each bouquet is as unique as you are.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bi-check"></i>
+                  <div>
+                    <h4>Effortless Navigation</h4>
+                    <p>Navigate with ease through our user-friendly interface, to find and select the ideal bouquet that speaks to your heart.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-4 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi-check"></i>
+                  <div>
+                    <h4>Log in as a Guest</h4>
+                    <p>For those who love simplicity. No need for a lengthy registration process.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- End Feature Icons -->
+
+      </div>
+
+    </section><!-- End Features Section -->
+
+    <!-- ======= product Section ======= -->
+    <section id="product" class="product">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Shop Now</h2>
+          <p>Do you want to send flowers to congratulate a friend on their new job or let a loved one know you’re thinking of them? or for a coworker’s new baby or to celebrate a birthday or holiday? Whatever the reason you want to show someone you care, we sure to have an amazing flowers for any and every occasion.</p>
+        </header>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="product-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-bestsellers">Best sellers</li>
+              <li data-filter=".filter-trending">Trending</li>
+              <li data-filter=".filter-mostpopular">Most popular</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row gy-4 product-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 product-item filter-bestsellers">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-1.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-1.jpg" data-gallery="productGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$60</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-trending">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-2.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-2.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$45</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-bestsellers">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-3.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-3.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$39</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-trending">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-4.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-4.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$85</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-mostpopular">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-5.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-5.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$35</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-bestsellers">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-6.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-6.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$75</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-trending">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-7.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-7.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$60</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-trending">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-8.jpg') }}" class="img-fluid" alt="">
+              <a href="product-details.html" title="More Details"></a>
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-8.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$25</h4>
+          </div>
+
+          <div class="col-lg-4 col-md-6 product-item filter-mostpopular">
+            <div class="product-wrap">
+              <img src="{{ url_for('static', filename='img/product/product-9.jpg') }}" class="img-fluid" alt="">
+              <div class="product-info">
+                <h4></h4>
+                <p></p>
+                <div class="product-links">
+                  <!--a href="assets/img/product/product-9.jpg" data-gallery="productGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a-->
+                  <a href="product-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                </div>
+              </div>
+            </div>
+            <h4>Sweet & Pretty Bouquet</h4>
+            <h4>$40</h4>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End product Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Testimonials</h2>
+          <p>What they are saying about us</p>
+        </header>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
+                  <h3>John Doe</h3>
+                  <h4></h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
+                  <h3>Sara Doe</h3>
+                  <h4></h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
+                  <h3>Jena Doe</h3>
+                  <h4></h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
+                  <h3>Alex kall</h3>
+                  <h4></h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                </p>
+                <div class="profile mt-auto">
+                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
+                  <h3>Richard Larson</h3>
+                  <h4></h4>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Blog</h2>
+          <p>Recent posts form our Blog</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="post-box">
+              <div class="post-img"><img src="{{ url_for('static', filename='img/blog/blog-1.jpg') }}" class="img-fluid" alt=""></div>
+              <span class="post-date">Tue, September 15</span>
+              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit</h3>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="post-box">
+              <div class="post-img"><img src="{{ url_for('static', filename='img/blog/blog-2.jpg') }}" class="img-fluid" alt=""></div>
+              <span class="post-date">Fri, August 28</span>
+              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="post-box">
+              <div class="post-img"><img src="{{ url_for('static', filename='img/blog/blog-3.jpg') }}" class="img-fluid" alt=""></div>
+              <span class="post-date">Fri, August 28</span>
+              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Recent Blog Posts Section -->
+
+  </main><!-- End #main -->
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- F.A.Q List 1-->
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button accordion-btn-color collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    What is BouqsPiks?
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    BouqsPiks is a portfolio project created by me during my studies as a software engineering student. The project's primary objective is to establish a distinctive online platform that caters to personalized flower experiences. BouqsPiks aims to offer a curated catalog showcasing exquisite blooms while providing innovative features such as personalized recommendations.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    How does BouqsPiks personalize flower recommendations?
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    BouqsPiks uses intelligent algorithms to analyze your flower preferences and occasions, ensuring that the recommendations you receive are tailor-made for your unique taste and the specific event you're celebrating.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    Can I use BouqsPiks without creating an account?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Absolutely! BouqsPiks offers a guest login option, allowing you to explore the website without the need for account creation. You can choose to register later.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+
+            <!-- F.A.Q List 2-->
+            <div class="accordion accordion-flush" id="faqlist2">
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                    Why is BouqsPiks lacking some features?
+                  </button>
+                </h2>
+                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    BouqsPiks is my first portfolio project developed by me as a software engineering student, and as such, certain features may be prioritized over others due to the scope of the project and time constraints. The focus is on delivering a functional and polished user experience, and additional features may be considered for future updates based on user feedback and project evolution. Your understanding and feedback are valuable as BouqsPiks continues to grow and enhance its offerings.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                    Why BouqsPiks?
+                  </button>
+                </h2>
+                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    BouqsPiks is conceived as a software engineering portfolio project aimed at showcasing skills in web development, design, and user experience. The project's mission is to create a unique online platform dedicated to personalized flower experiences. While some features may be limited due to the project's nature, BouqsPiks aims to offer a delightful and distinctive floral experience, emphasizing simplicity, personalization, and aesthetic appeal. Your engagement and feedback are vital in shaping the future direction of BouqsPiks.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                    How do I get notified about the project?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Stay connected with BouqsPiks by subscribing to our newsletter! Be the first to know about project updates. Additionally, follow us on social media for behind-the-scenes content, user stories, and the latest developments. Your engagement is key to the success and growth of BouqsPiks!
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End F.A.Q Section -->
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to our newsletter for exclusive updates, and the latest news!</p>
+        </div>
+        <div class="col-lg-6">
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <div class="bi-flower2">
+            <span>BouqsPiks</span>
+            </div>
+          </a>
+          <p>Questions, or feedback? Contact Us</p>
+          <div class="social-links mt-3">
+            <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-3 footer-links">
+          <h4></h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">How it Work</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-3 footer-links">
+          <h4></h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Features</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">F.A.Q</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-3 footer-cont">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!--img src="assets/img/logo.png" alt=""-->
+            <span></span>
+          </a>
+          <p>Questions, or feedback? Send us a message!</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2023 Copyright <strong><span>BouqsPiks</span></strong>. All Rights Reserved
+      </div> 
+      </div>
+  </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chevron-compact-up" title="Back to top"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

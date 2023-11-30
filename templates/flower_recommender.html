@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- ======= FlowerRecommender Section ======= -->
+  <section id="flowerRecommender" class="flowerRecommender">
+    <div class="container" data-aos="zoom-in">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <!--h2 class="text-center mb-4">BouqsPiks Recommender</h2-->
+
+                <!-- Form -->
+                <form id="flowerForm" class="flowerForm" action="/get_recommendations" method="POST">
+                    <div class="form-group">
+                        <h2 class="text-center mb-4">BouqsPiks Recommender</h2>
+                        <label for="gender">Select Gender:</label>
+                        <select class="form-control" id="gender" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personality">Select Personality:</label>
+                        <select class="form-control" id="personality" name="personality">
+                            <option value="romantic">Romantic</option>
+                            <option value="cheerful">Cheerful</option>
+                            <option value="dreamer">Dreamer</option>
+                            <option value="adventurer">Adventurer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Select Occasion:</label>
+                        <input type="text" class="form-control" id="occasion" name="occasion" placeholder="e.g., Birthday, Anniversary">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priceRange">Select Price Range:</label>
+                        <select class="form-control" id="priceRange" name="priceRange">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    
+                    <div class="text-center">
+                    <button type="submit" class="btn text-center mb-4" onclick="getRecommendations(event)">Get Recommendations</button>
+                    </div>
+                </form>
+</section>
+    <!-- ======= End FlowerRecommender Section ======= -->
+{% endblock %}

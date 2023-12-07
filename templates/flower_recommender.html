@@ -35,16 +35,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="priceRange">Select Price Range:</label>
-                        <select class="form-control" id="priceRange" name="priceRange">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
+                        <label for="budget">Select Your Budget:</label>
+                        <input type="number" class="form-control" id="budget" name="budget" required>
                     </div>
                     
                     <div class="text-center">
-                    <button type="submit" class="btn text-center mb-4" onclick="getRecommendations(event)">Get Recommendations</button>
+                    <button type="submit" class="btn text-center mb-4">Get Recommendations</button>
                     </div>
                 </form>
 </section>

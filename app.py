@@ -1,8 +1,10 @@
 """ Sets up a Flask server to handle incoming requests """
 
 from flask import Flask, render_template, request, jsonify
-from dummy_data import dummy_flower_data
-import os
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import LabelEncoder
+import numpy as np
+import json
 
 
 app = Flask(__name__)
@@ -12,15 +14,52 @@ port = 5000
 host = '0.0.0.0'
 
 
-def filter_flowers(data, gender, personality, occasion, price_range):
-    """ Implement logic to filter data based on user input """
-    filtered_data = [flower for flower in data if
-                     flower['gender'] == gender and
-                     flower['personality'] == personality and
-                     flower['occasion'] == occasion and
-                     flower['price_range'] == price_range]
+def read_flower_data_from_json():
+    """ Reads flower data from the JSON file """
+    with open('flower_data.json', 'r') as file:
+        flower_data = json.load(file)
+    return flower_data
 
-    return filtered_data
+
+def fit_label_encoders(flower_data):
+    """ Encodes categorical features using sl LabelEncoder """
+    le_occasion = LabelEncoder()
+    le_personality = LabelEncoder()
+
+    for flower in flower_data:
+        flower['occasion'] = le_occasion.fit_transform([flower['occasion']])[0]
+        flower['personality'] = le_personality.fit_transform([flower['personality']])[0]
+    return le_occasion, le_personality, flower_data
+
+
+def parse_user_budget(budget_option):
+    """ Converts budget options to numerical values """
+    budgets = {
+        "under 25": 25,
+        "25-200": (25, 200),
+        "over 200": 200
+    }
+    try:
+        return budgets[budget_option]
+    except KeyError:
+        # Handle invalid budget option
+        raise ValueError(f"Invalid budget option: {budget_option}")
+
+
+def train_model(flower_data):
+    """ Trains the KNN model using feature arrays and prices """
+    features = []
+    prices = []
+    for flower in flower_data:
+        features.append([flower['occasion'], flower['gender'], flower['personality']])
+        prices.append(flower['price'])
+
+    X = np.concatenate([np.array(features), np.array(prices).reshape(-1, 1)], axis=1)
+
+    knn_model, le_occasion, le_personality, flower_data = fit_label_encoders(flower_data)
+    knn_model = NearestNeighbors(n_neighbors=5)
+    # knn_model.fit(X)
+    return knn_model, le_occasion, le_personality
 
 
 @app.route('/')
@@ -39,24 +78,41 @@ def contact():
 def flower_recommender():
     """ Serves the flower recommender page """
     return render_template('flower_recommender.html')
-    
+
 
 @app.route('/get_recommendations', methods=['POST'])
 def get_recommendations():
     """
-    Retrieves user inputs from the form, and Generates a prompt for the ChatGPT
-    API to get recommendations.
+    Retrieves user inputs, encodes them, and generates recommendations.
     """
     gender = request.form.get('gender')
     personality = request.form.get('personality')
     occasion = request.form.get('occasion')
-    price_range = request.form.get('priceRange')
-    # Filter dummy flower data based on user input
-    filtered_flowers = filter_flowers(dummy_flower_data, gender, personality, occasion, price_range)
-    # Extract flower names for recommendations
-    recommendations = [flower['name'] for flower in filtered_flowers]
-    # Render the recommendations on the webpage recommendations=recommendations
-    return render_template('recommendations.html', recommendations=recommendations, flower_data=filtered_flowers)
+    budget_option = request.form.get('budget')
+
+    flower_data = read_flower_data_from_json()
+    fit_label_encoders(flower_data)
+
+    knn_model, le_occasion, le_personality = train_model(flower_data)
+
+    try:
+        min_budget, max_budget = parse_user_budget(budget_option)
+    except ValueError as error:
+        return render_template('error.html', error=error), 400
+
+    user_features = np.array([
+        le_occasion.transform([occasion])[0],
+        gender,
+        le_personality.transform([personality])[0],
+        min_budget,
+        max_budget
+    ]).reshape(1, -1)
+
+    _, indices = knn_model.kneighbors(user_features)
+
+    matched_flowers = [flower_data[i] for i in indices[0]]
+
+    return render_template('recommendations.html', flowers=matched_flowers)
 
 
 @app.errorhandler(404)

@@ -1,11 +1,3 @@
-/**
-* Template Name: FlexStart
-* Updated: Sep 18 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -625,6 +617,36 @@ section {
 
 .about .btn-read-more:hover i {
   transform: translateX(5px);
+}
+
+.about .project-timeline {
+  font-weight: 600;
+}
+
+.about .project-timeline:hover {
+  color: palevioletred;
+}
+
+.about .gitHub-repo {
+  font-weight: 600;
+}
+
+.about .gitHub-repo:hover {
+  color: palevioletred;
+}
+
+.about .social-links a {
+  font-size: 16px;
+  margin-top: 0px;
+  display: inline-block;
+  color: rgba(12, 12, 12, 0.5);
+  line-height: 0;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.about .social-links a:hover {
+  color: palevioletred;
 }
 
 /*--------------------------------------------------------------
@@ -1665,4 +1687,67 @@ section {
 
 .card:hover {
   transform: scale(1.05);
+}
+
+.timeline-steps {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+.timeline-steps .timeline-step {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem
+}
+
+@media (min-width:768px) {
+  .timeline-steps .timeline-step:not(:last-child):after {
+      content: "";
+      display: block;
+      border-top: .25rem dotted palevioletred;
+      width: 3.46rem;
+      position: absolute;
+      left: 7.5rem;
+      top: .3125rem
+  }
+  .timeline-steps .timeline-step:not(:first-child):before {
+      content: "";
+      display: block;
+      border-top: .25rem dotted palevioletred;
+      width: 3.8125rem;
+      position: absolute;
+      right: 7.5rem;
+      top: .3125rem
+  }
+}
+
+.timeline-steps .timeline-content {
+  width: 10rem;
+  text-align: center
+}
+
+.timeline-steps .timeline-content .inner-circle {
+  border-radius: 1.5rem;
+  height: 1rem;
+  width: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: palevioletred
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+  content: "";
+  background-color: white;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 6.25rem;
+  opacity: .5
 }

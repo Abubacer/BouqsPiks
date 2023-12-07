@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>BouqsPiks</title>
+  <title>BouqsPiks - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -44,16 +44,15 @@
         <ul>
           <li><a class="nav-link scrollto active" href="{{ url_for('home') }}">Home</a></li>
           <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.html#values">How it work</a></li>
           <li><a class="nav-link scrollto" href="index.html#features">Features</a></li>
           <li class="dropdown"><a href="#"><span>Help</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="index.html#values">How it work</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
               <li><a href="index.html#faq">F.A.Q</a></li>
               <li><a href="index.html#faq">Support</a></li>
             </ul>
           </li>
-
-          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contact</a></li>
           <li><a class="getstarted scrollto" href="{{ url_for('flower_recommender') }}">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -63,7 +62,7 @@
   </header><!-- End Header -->
 
   <!-- ======= main Section ======= -->
-  <main>
+   <main>
     {% block content %}{% endblock %}
   </main>  
   <!-- End main Section -->
@@ -96,30 +95,29 @@
             <span>BouqsPiks</span>
             </div>
           </a>
-          <p>Questions, or feedback? Contact Us</p>
+          <p>Questions, or feedback? Contact me</p>
           <div class="social-links mt-3">
             <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/Azizthedesigner" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/azizthedesigner" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/azizdesign/" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-3 footer-links">
           <h4></h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">How it Work</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="{{ url_for('home') }}">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#values">How it Work</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-3 footer-links">
           <h4></h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Features</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">F.A.Q</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#features">Features</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#faq">F.A.Q</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/Abubacer/BouqsPiks">Project GitHub Repository</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-3 footer-cont">
@@ -127,7 +125,6 @@
             <!--img src="assets/img/logo.png" alt=""-->
             <span></span>
           </a>
-          <p></p>
         </div>
 
       </div>
@@ -155,7 +152,6 @@
 
   <!-- Main JS File -->
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/recommender.js') }}"></script>
 
 </body>
 

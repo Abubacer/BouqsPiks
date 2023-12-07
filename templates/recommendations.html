@@ -2,25 +2,18 @@
 
 {% block content %}
 <div id="productCards" class="row mt-4">
-    {% for flower in flower_data %}
+    {% for flower in flowers %}
         <div class="col-md-4 mb-4">
             <div class="card">
                 <img src="{{ flower.image }}" class="card-img-top" alt="{{ flower.name }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ flower.name }}</h5>
                     <p class="card-text">{{ flower.description }}</p>
-                    <p class="card-text">${{ flower.price.toFixed(2) }}</p>
+                    <p class="card-text">${{ flower.price }}</p>
                     <a href="#" class="btn btn-primary">View Details</a>
                 </div>
             </div>
         </div>
     {% endfor %}
 </div>
-
-<h2>Recommended Flowers:</h2>
-<ul>
-    {% for recommendation in recommendations %}
-        <li>{{ recommendation }}</li>
-    {% endfor %}
-</ul>
 {% endblock %}

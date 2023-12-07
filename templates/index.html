@@ -44,16 +44,15 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#values">How it work</a></li>
           <li><a class="nav-link scrollto" href="#features">Features</a></li>
           <li class="dropdown"><a href="#"><span>Help</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#values">How it work</a></li>
+              <li><a href="{{ url_for('contact') }}">Contact</a></li>
               <li><a href="#faq">F.A.Q</a></li>
               <li><a href="#faq">Support</a></li>
             </ul>
           </li>
-
-          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contact</a></li>
           <li><a class="getstarted scrollto" href="{{ url_for('flower_recommender') }}">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -96,25 +95,35 @@
 
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h3>Who We Are</h3>
-              <h2>We want to revolutionize the way individuals gifts flowers.</h2>
-              <p>
-                Our aims to simplify the flower-buying process, making it enjoyable and stress-free. With personalized recommendations and a wide array of floral options, users can effortlessly find the perfect bouquet to convey their feelings.
-              </p>
-              <div class="text-center text-lg-start">
+              <h3>Welcome to BouqsPiks</h3>
+              <h2>Where Flowers Find Their Perfect Match!</h2>
+              <p>Hello everyone, I'm Aziz, an aspiring software engineer, and I'm thrilled to introduce you to my portfolio project, BouqsPiks a flower recommendation web app.</p>
+              <p>The inspiration behind BouqsPiks stems from the desire to simplify the process of finding the perfect bouquet. We've all been in situations where we want to express our feelings through flowers, but the options can be overwhelming. BouqsPiks is my solution to simplify the flower-buying process, making it enjoyable, personalized, and hassle-free. With personalized recommendations at its core, BouqsPiks empowers users to effortlessly discover the ideal bouquet to convey their emotions to those they cherish.</p>
+              <p>BouqsPiks idea took root during my software engineering educational journey at Holberton School. This project was assigned as a portfolio project, and over a span of two weeks, the project unfolded, progressing step by step. I started with the front end, moved on to the back end, and added the final touches. This period marked a substantial milestone in my educational and professional exploration.<a href="#timeline" class="project-timeline"> View project timeline</a></p>
+              <p>For a peek into the project's code and development process, you can visit <a href="https://github.com/Abubacer/BouqsPiks" class="gitHub-repo">my project GitHub repository</a></p>
+              <p>Feel free to explore my professional journey and connect with me</p>
+              <div class="social-links mt-3">
+                <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
+                <a href="https://twitter.com/Azizthedesigner" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="https://www.instagram.com/azizthedesigner" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/azizdesign/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+              
+
+              <!--div class="text-center text-lg-start">
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Read More</span>
+                  <span id="readMoreText">Read More</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
-              </div>
+              </div-->
             </div>
           </div>
 
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
             <img src="{{ url_for('static', filename='img/about.jpg') }}" class="img-fluid" alt="">
           </div>
-
         </div>
+
       </div>
 
     </section><!-- End About Section -->
@@ -389,107 +398,63 @@
 
     </section><!-- End product Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- timeline Section -->
+    <section id="timeline" class="timeline">
 
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Testimonials</h2>
-          <p>What they are saying about us</p>
+          <h2>Timeline</h2>
+          <p>From the initial spark to the final touch, let's trace the unique timeline capturing the key milestones that shaped BouqsPiks into a fully-fledged project.</p>
         </header>
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+    <div class="row">
+        <div class="col">
+            <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Nov 10, 2023</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Research Phase</p>
+                    </div>
                 </div>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
-                  <h3>John Doe</h3>
-                  <h4></h4>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Nov 16, 2023</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">Project MVP Scope and Objectives</p>
+                    </div>
                 </div>
+                <div class="timeline-step">
+                    <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                        <div class="inner-circle"></div>
+                        <p class="h6 mt-3 mb-1">Nov 17, 2023</p>
+                        <p class="h6 text-muted mb-0 mb-lg-0">UI Design and Development Kickoff</p>
+                    </div>
+                </div>
+                <div class="timeline-step">
+                  <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                      <div class="inner-circle"></div>
+                      <p class="h6 mt-3 mb-1">Nov 24, 2023</p>
+                      <p class="h6 text-muted mb-0 mb-lg-0">UI Implementation Completed</p>
+                  </div>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <div class="timeline-step">
+                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                    <div class="inner-circle"></div>
+                    <p class="h6 mt-3 mb-1">Nov 30, 2023</p>
+                    <p class="h6 text-muted mb-0 mb-lg-0">Backend Development and Integration</p>
                 </div>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Sara Doe</h3>
-                  <h4></h4>
-                </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
+                  <div class="inner-circle"></div>
+                  <p class="h6 mt-3 mb-1">Nov 32, 2023</p>
+                  <p class="h6 text-muted mb-0 mb-lg-0">Project MVP Completion</p>
               </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Jena Doe</h3>
-                  <h4></h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Alex kall</h3>
-                  <h4></h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="{{ url_for('static', filename='img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
-                  <h3>Richard Larson</h3>
-                  <h4></h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- End Testimonials Section -->
-
+   </section>
+    <!-- End timeline Section -->
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-blog-posts" class="recent-blog-posts">
 
@@ -674,30 +639,29 @@
             <span>BouqsPiks</span>
             </div>
           </a>
-          <p>Questions, or feedback? Contact Us</p>
+          <p>Questions, or feedback? Contact me</p>
           <div class="social-links mt-3">
             <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/Azizthedesigner" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.instagram.com/azizthedesigner" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/azizdesign/" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-3 footer-links">
           <h4></h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">About Us</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">How it Work</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#home">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#values">How it Work</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-3 footer-links">
           <h4></h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Features</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">F.A.Q</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#features">Features</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#faq">F.A.Q</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://github.com/Abubacer/BouqsPiks">Project GitHub Repository</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-3 footer-cont">
@@ -705,7 +669,6 @@
             <!--img src="assets/img/logo.png" alt=""-->
             <span></span>
           </a>
-          <p>Questions, or feedback? Send us a message!</p>
         </div>
 
       </div>

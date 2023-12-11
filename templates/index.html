@@ -34,7 +34,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ url_for('home') }}" class="logo d-flex align-items-center">
         <!--<img src="assets/img/logo.png" alt="">-->
         <span>BouqsPiks</span>
         <!--<h6>Where Flowers Find Their Perfect Match!</h6>-->
@@ -93,22 +93,21 @@
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-8 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
               <h3>Welcome to BouqsPiks</h3>
               <h2>Where Flowers Find Their Perfect Match!</h2>
               <p>Hello everyone, I'm Aziz, an aspiring software engineer, and I'm thrilled to introduce you to my portfolio project, BouqsPiks a flower recommendation web app.</p>
               <p>The inspiration behind BouqsPiks stems from the desire to simplify the process of finding the perfect bouquet. We've all been in situations where we want to express our feelings through flowers, but the options can be overwhelming. BouqsPiks is my solution to simplify the flower-buying process, making it enjoyable, personalized, and hassle-free. With personalized recommendations at its core, BouqsPiks empowers users to effortlessly discover the ideal bouquet to convey their emotions to those they cherish.</p>
-              <p>BouqsPiks idea took root during my software engineering educational journey at Holberton School. This project was assigned as a portfolio project, and over a span of two weeks, the project unfolded, progressing step by step. I started with the front end, moved on to the back end, and added the final touches. This period marked a substantial milestone in my educational and professional exploration.<a href="#timeline" class="project-timeline"> View project timeline</a></p>
-              <p>For a peek into the project's code and development process, you can visit <a href="https://github.com/Abubacer/BouqsPiks" class="gitHub-repo">my project GitHub repository</a></p>
-              <p>Feel free to explore my professional journey and connect with me</p>
+              <p>BouqsPiks idea took root during my software engineering educational journey at Holberton School. This project was assigned as a portfolio project, and over a span of two weeks, the project unfolded, progressing step by step. I started with the front end, moved on to the back end, and added the final touches. This period marked a substantial milestone in my educational and professional exploration.<a href="#timeline" class="project-timeline"> You can view the project timeline here</a></p>
+              <p>For a peek into the project's code and development process, you can visit <a href="https://github.com/Abubacer/BouqsPiks" class="gitHub-repo">my project GitHub repository</a><br>Feel free to explore my professional journey and connect with me</p>
               <div class="social-links mt-3">
                 <a href="contact.html" class="mail"><i class="bi bi-envelope-fill"></i></a>
                 <a href="https://twitter.com/Azizthedesigner" class="twitter"><i class="bi bi-twitter-x"></i></a>
                 <a href="https://www.instagram.com/azizthedesigner" class="instagram"><i class="bi bi-instagram"></i></a>
                 <a href="https://www.linkedin.com/in/azizdesign/" class="linkedin"><i class="bi bi-linkedin"></i></a>
               </div>
-              
+
 
               <!--div class="text-center text-lg-start">
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -119,8 +118,9 @@
             </div>
           </div>
 
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="{{ url_for('static', filename='img/about.jpg') }}" class="img-fluid" alt="">
+          <div class="col-lg-4 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <!--img src="{{ url_for('static', filename='img/about.jpg') }}" class="img-fluid" alt=""-->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wCGDEpaIWUU?si=C2RnKSfYQ0ILO7mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
 
@@ -471,7 +471,7 @@
             <div class="post-box">
               <div class="post-img"><img src="{{ url_for('static', filename='img/blog/blog-1.jpg') }}" class="img-fluid" alt=""></div>
               <span class="post-date">Tue, September 15</span>
-              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit</h3>
+              <h3 class="post-title">Portfolio Project Blog post</h3>
               <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
@@ -679,7 +679,7 @@
     <div class="container">
       <div class="copyright">
         &copy; 2023 Copyright <strong><span>BouqsPiks</span></strong>. All Rights Reserved
-      </div> 
+      </div>
       </div>
   </div>
     </div>

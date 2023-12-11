@@ -1,19 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="productCards" class="row mt-4">
-    {% for flower in flowers %}
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="{{ flower.image }}" class="card-img-top" alt="{{ flower.name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ flower.name }}</h5>
-                    <p class="card-text">{{ flower.description }}</p>
-                    <p class="card-text">${{ flower.price }}</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
+    <!-- ======= Recommended product Section ======= -->
+    <section id="product" class="product">
+
+        <div class="container" data-aos="fade-up">
+  
+          <header class="s-h text-center mb-4">
+            <h2>Discover Your Perfect Blooms!</h2>
+          </header>
+
+        {% if flowers %}
+          <div class="row gy-4 product-container" data-aos="fade-up" data-aos-delay="200">
+            {% for flower in flowers %}
+              <div class="col-lg-4 col-md-6 product-item">
+                <div class="product-wrap">
+                  <img src="{{ flower.image }}" class="img-fluid" alt="{{ flower.name }}">
+                  <div class="product-info">
+                    <h4></h4>
+                    <p></p>
+                    <div class="product-links">
+                      <a href="{{ url_for('flower_details', flower_id=flower.productId) }}" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    {% endfor %}
-</div>
+                  <h4>{{ flower.name }}</h4>
+                  <h4>${{ flower.price }}</h4>
+             </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">Oops! It looks like we couldn't find any flowers that match your criteria. Don't worry, our floral experts are here to assist you. Please try adjusting your preferences or explore our other delightful options!</p>
+        {% endif %}
+    </div>
+  </section>
+<!-- ======= End recommended product Section ======= -->
 {% endblock %}
+

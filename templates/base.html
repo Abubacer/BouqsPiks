@@ -43,14 +43,14 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="{{ url_for('home') }}">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="index.html#values">How it work</a></li>
-          <li><a class="nav-link scrollto" href="index.html#features">Features</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('home') }}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('home') }}#values">How it work</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('home') }}#features">Features</a></li>
           <li class="dropdown"><a href="#"><span>Help</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{{ url_for('contact') }}">Contact</a></li>
-              <li><a href="index.html#faq">F.A.Q</a></li>
-              <li><a href="index.html#faq">Support</a></li>
+              <li><a href="{{ url_for('home') }}#faq">F.A.Q</a></li>
+              <li><a href="{{ url_for('home') }}#faq">Support</a></li>
             </ul>
           </li>
           <li><a class="getstarted scrollto" href="{{ url_for('flower_recommender') }}">Get Started</a></li>
@@ -64,7 +64,7 @@
   <!-- ======= main Section ======= -->
    <main>
     {% block content %}{% endblock %}
-  </main>  
+  </main>
   <!-- End main Section -->
 
 <!-- ======= Footer ======= -->
@@ -135,7 +135,7 @@
     <div class="container">
       <div class="copyright">
         &copy; 2023 Copyright <strong><span>BouqsPiks</span></strong>. All Rights Reserved
-      </div> 
+      </div>
       </div>
   </div>
     </div>

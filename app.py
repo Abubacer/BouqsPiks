@@ -1,9 +1,6 @@
 """ Sets up a Flask server to handle incoming requests """
 
 from flask import Flask, render_template, request, jsonify
-from sklearn.neighbors import NearestNeighbors
-from sklearn.preprocessing import LabelEncoder
-import numpy as np
 import json
 
 
@@ -14,57 +11,22 @@ port = 5000
 host = '0.0.0.0'
 
 
-def read_flower_data_from_json():
-    """ Reads flower data from the JSON file """
-    with open('flower_data.json', 'r') as file:
-        flower_data = json.load(file)
-    return flower_data
+# Loads flower data from the JSON file
+with open('flowers.json') as file:
+    flower_data = json.load(file)["flowerlist"]
 
 
-def fit_label_encoders(flower_data):
-    """ Encodes categorical features using sl LabelEncoder """
-    le_occasion = LabelEncoder()
-    le_personality = LabelEncoder()
-
+def get_flower_details_by_id(flower_id, flower_data):
+    """Get flower details based on the flower ID."""
     for flower in flower_data:
-        flower['occasion'] = le_occasion.fit_transform([flower['occasion']])[0]
-        flower['personality'] = le_personality.fit_transform([flower['personality']])[0]
-    return le_occasion, le_personality, flower_data
-
-
-def parse_user_budget(budget_option):
-    """ Converts budget options to numerical values """
-    budgets = {
-        "under 25": 25,
-        "25-200": (25, 200),
-        "over 200": 200
-    }
-    try:
-        return budgets[budget_option]
-    except KeyError:
-        # Handle invalid budget option
-        raise ValueError(f"Invalid budget option: {budget_option}")
-
-
-def train_model(flower_data):
-    """ Trains the KNN model using feature arrays and prices """
-    features = []
-    prices = []
-    for flower in flower_data:
-        features.append([flower['occasion'], flower['gender'], flower['personality']])
-        prices.append(flower['price'])
-
-    X = np.concatenate([np.array(features), np.array(prices).reshape(-1, 1)], axis=1)
-
-    knn_model, le_occasion, le_personality, flower_data = fit_label_encoders(flower_data)
-    knn_model = NearestNeighbors(n_neighbors=5)
-    # knn_model.fit(X)
-    return knn_model, le_occasion, le_personality
+        if flower["productId"] == flower_id:
+            return flower
+    return None
 
 
 @app.route('/')
 def home():
-    """ Serves the landing page """
+    """ Serves the landing html page """
     return render_template('index.html')
 
 
@@ -80,6 +42,17 @@ def flower_recommender():
     return render_template('flower_recommender.html')
 
 
+@app.route('/product-details/<int:flower_id>')
+def flower_details(flower_id):
+    """ Serves the flower product details page """
+    flower = get_flower_details_by_id(flower_id, flower_data)
+
+    if flower is not None:
+        return render_template('product-details.html', flower=flower)
+    else:
+        return render_template('404.html')
+
+
 @app.route('/get_recommendations', methods=['POST'])
 def get_recommendations():
     """
@@ -90,29 +63,15 @@ def get_recommendations():
     occasion = request.form.get('occasion')
     budget_option = request.form.get('budget')
 
-    flower_data = read_flower_data_from_json()
-    fit_label_encoders(flower_data)
+    print("Received Form Values:")
+    print("Gender:", gender)
+    print("Personality:", personality)
+    print("Occasion:", occasion)
+    print("Budget:", budget_option)
 
-    knn_model, le_occasion, le_personality = train_model(flower_data)
+    filtered_flowers = filter_flowers(gender, personality, occasion, budget_option)
 
-    try:
-        min_budget, max_budget = parse_user_budget(budget_option)
-    except ValueError as error:
-        return render_template('error.html', error=error), 400
-
-    user_features = np.array([
-        le_occasion.transform([occasion])[0],
-        gender,
-        le_personality.transform([personality])[0],
-        min_budget,
-        max_budget
-    ]).reshape(1, -1)
-
-    _, indices = knn_model.kneighbors(user_features)
-
-    matched_flowers = [flower_data[i] for i in indices[0]]
-
-    return render_template('recommendations.html', flowers=matched_flowers)
+    return render_template('recommendations.html', flowers=filtered_flowers)
 
 
 @app.errorhandler(404)
@@ -125,6 +84,21 @@ def page_not_found(error):
 def internal_server_error(error):
     """ Error handlers for 500 errors """
     return render_template('500.html'), 500
+
+
+def filter_flowers(gender, personality, occasion, budget_option):
+    """ Filters flowers data based on user input """
+    filtered_flowers = []
+    for flower in flower_data:
+        if (
+            (gender is None or flower['gender'] == gender) and
+            (personality is None or flower['personality'] == personality) and
+            (occasion is None or flower['occasion'] == occasion) and
+            (budget_option is None or flower['price'] <= float(budget_option))
+        ):
+            filtered_flowers.append(flower)
+
+    return filtered_flowers
 
 
 if __name__ == '__main__':

@@ -1,11 +1,9 @@
 <!-- repo image -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/Abubacer/README-Template/blob/master/images/BouqsPiks.png" alt="IMG" 
+  <a href="http://binaryart.pythonanywhere.com/">
+    <img src="https://github.com/Abubacer/BouqsPiks/blob/master/images/BouqsPiks.png" alt="IMG" 
   </a>
-
-<h1 align="center"></h1>
 <div align="left">
 <br />
 
@@ -15,7 +13,9 @@ A flower recommendation Web Application
 
 ## Introduction
 
-Welcome to BouqsPiks! This project is a web application built with Flask, serving as an interactive platform for users to explore and find flower recommendations based on various preferences.
+Welcome to BouqsPiks! This was my first portfolio project as a software engineering student. Over two weeks, I embraced various roles, acting both as the visionary and the executor. The timeline was filled with challenges and breakthroughs, showcasing my dedication and determination. This project, a flower recommendation web app, originated from the vision of simplifying the quest for the perfect bouquet. Its primary goal is to transform this process into an enjoyable, personalized, and hassle-free experience.
+
+This project is a web application built with HTML, CSS and Flask, serving as an interactive platform for users to explore and find flower recommendations based on various preferences.
 
 - [BouqsPiks Live](http://binaryart.pythonanywhere.com/)
 - [Read the Blog](https://www.linkedin.com/pulse/bouqspiks-my-portfolio-project-journey-trials-lessons-belkharmoudi-nghge)
@@ -62,7 +62,7 @@ Explore the different features of the Web Application:
 You can use the flower recommender to find recommendations based on your preferences gender, personality, occasion, and budget.
 
 ## Built With
-All the development and testing were run over an operating system Ubuntu 20.04 LTS using the programming language Python 3.8 The editors used were VIM 8.1, VSCode 1.6 Control version using Git 2.25 Style guidelines: pycodestyle (version 2.7.*) and PEP8.
+All the development and testing were run over an operating system Ubuntu 20.04 LTS using Bootstrap 5 and the programming language Python 3.8 The editors used were VIM 8.1, VSCode 1.6 Control version using Git 2.25 Style guidelines: pycodestyle (version 2.7.*) and PEP8.
 
 <br />
 <div align="left">
@@ -80,5 +80,5 @@ Contributions are welcome! If you would like to contribute to the project, pleas
  
 ## Licensing
 
-This project is licensed under the [MIT License]().
+This project is licensed under the [MIT License](https://github.com/Abubacer/BouqsPiks/blob/master/LICENSE.txt).
 </div>

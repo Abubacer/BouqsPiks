@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="http://binaryart.pythonanywhere.com/">
-    <img src="https://github.com/Abubacer/BouqsPiks/blob/master/images/BouqsPiks.png" alt="IMG" 
+    <img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/BouqsPiks.png" alt="IMG">
   </a>
 <div align="left">
 <br />
@@ -60,6 +60,24 @@ Explore the different features of the Web Application:
   - Error-Handled Gracefully: Robust error-handling mechanisms that guarantee a smooth user experience. The web app gracefully navigates users through unexpected situations, ensuring reliability and trust.
 
 You can use the flower recommender to find recommendations based on your preferences gender, personality, occasion, and budget.
+
+## Screenshots
+
+The project Landing page:
+
+<img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/Landingpage.png" alt="IMG">
+
+The user preferences input page:
+
+<img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/getrecommendation.png" alt="IMG">
+
+The personalized recommendations page:
+
+<img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/therecommendation.png" alt="IMG">
+
+The detailed product page:
+
+<img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/detailedproduct.png" alt="IMG">
 
 ## Built With
 All the development and testing were run over an operating system Ubuntu 20.04 LTS using Bootstrap 5 and the programming language Python 3.8 The editors used were VIM 8.1, VSCode 1.6 Control version using Git 2.25 Style guidelines: pycodestyle (version 2.7.*) and PEP8.

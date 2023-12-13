@@ -90,6 +90,41 @@ All the development and testing were run over an operating system Ubuntu 20.04 L
 <div align="left">
 <a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&style=for-the-badge&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a><!-- python--> <a href="https://www.python.org" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Python&style=for-the-badge&color=FFD43B&logo=python&logoColor=3776AB&labelColor=2F333A" alt="python"></a><!-- css --> <a href="https://www.w3schools.com/css/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=CSS3&style=for-the-badge&color=blue&logo=CSS3&logoColor=blue&labelColor=white" alt="css"><!-- HTML --> <a href="https://www.w3schools.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=HTML5&style=for-the-badge&color=orange&logo=HTML5&logoColor=orange&labelColor=white" alt="html"><!-- bash --> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Bash&style=for-the-badge&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a></a> <!-- vim --> <a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&style=for-the-badge&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a></a><!-- git --> <a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&style=for-the-badge&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a> <!-- github --> <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&style=for-the-badge&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"><!-- vagrant --> <a href="https://www.vagrantup.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vagrant&style=for-the-badge&color=blue&logo=vagrant&logoColor=f2f2f2&labelColor=2F333A" alt="vagrant"><!-- py --> <a href="https://pypi.org/project/pycodestyle/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=pycodestyle&style=for-the-badge&color=blue&logo=python&logoColor=yellow&labelColor=2F333A" alt="Github">
 
+## Achievements
+
+Through the development of this project, I gained valuable technical insights. I honed my skills in frontend technologies, mastering the art of creating a responsive and visually appealing user interface using HTML5, CSS3, JavaScript, and Bootstrap. Additionally, implementing a recommendation engine enhanced my understanding of algorithmic design and data processing. I delved into the intricacies of Flask, solidifying my proficiency in backend development and server-side logic. Handling and manipulating JSON data added a layer of practical experience in managing dynamic datasets.
+
+Despite some setbacks, this project revealed my ability to tackle complex challenges, from crafting an intricate recommendation engine to optimizing user interfaces. I discovered my resilience in problem-solving, especially when faced with tight deadlines. The iterative nature of development allowed me to embrace a growth mindset, adapting and learning from each obstacle. It significantly shapes my engineering path. It reinforced my passion for creating user-centric solutions, emphasizing the importance of thoughtful design and seamless user experiences. The intersection of frontend and backend development showcased the value of versatility in a rapidly evolving tech landscape. Moving forward, I aspire to explore deeper into machine learning and data science to enhance the sophistication of recommendation algorithms and further refine user personalization. 
+
+## Future
+
+This is just the beginning. Here are some exciting plans for the future development of the project:
+
+- Enhancing the Recommendation Engine:
+The current recommendation engine serves as a foundation, and I plan to enhance it further by incorporating more advanced machine learning techniques. This will not only improve the accuracy of the suggestions but also make them more personalized for individual users. Expect more refined and tailored flower recommendations based on user preferences and trends.
+
+- User Feedback Mechanisms:
+I believe in the importance of user feedback for continuous improvement. In the future, I will be implementing user feedback mechanisms within the Web Application. This will allow you, the users, to share your experiences, provide suggestions, and report any issues you encounter. Your insights will be invaluable in shaping the direction of the application and making it a more user-friendly and enjoyable experience.
+
+- More Features, Continuous Deployment and Updates:
+Stay tuned for regular updates and new features. This will ensure that you always have access to the latest improvements and functionalities. I'll be actively addressing bugs, adding more features, and implementing enhancements to keep BouqsPiks vibrant and up-to-date.
+
+## Authors
+
+### Aziz Bel Kharmoudi
+
+I am currently a software engineering student with a background in design, blending creativity with technical prowess. Transitioning from a designer to a software engineer has been an exciting journey, and this project represents a significant milestone in my growth. Outside of coding, I am passionate about creating aesthetically pleasing and user-friendly experiences.
+
+## Acknowledgements
+
+- [Holberton School](https://www.holbertonschool.com/)
+- [ALX Africa](https://www.alxafrica.com/)
+- My 12 years Old Laptop
+- Sleepless Nights
+- My Imposter Syndrome
+- Bugs and Python Traceback
+- My Trance Music Playlist
+
 ## Contributing
 
 Contributions are welcome! If you would like to contribute to the project, please follow these steps:

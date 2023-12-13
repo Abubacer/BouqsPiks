@@ -79,6 +79,10 @@ The detailed product page:
 
 <img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/detailedproduct.png" alt="IMG">
 
+The Page Not Found page:
+
+<img src="https://github.com/Abubacer/BouqsPiks/blob/master/Screenshots/PageNotFound.png" alt="IMG">
+
 ## Built With
 All the development and testing were run over an operating system Ubuntu 20.04 LTS using Bootstrap 5 and the programming language Python 3.8 The editors used were VIM 8.1, VSCode 1.6 Control version using Git 2.25 Style guidelines: pycodestyle (version 2.7.*) and PEP8.
 

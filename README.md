@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/Abubacer/README-Template/blob/master/images/banner.png" alt="IMG" 
+    <img src="https://github.com/Abubacer/README-Template/blob/master/images/BouqsPiks.png" alt="IMG" 
   </a>
 
 <h1 align="center"></h1>

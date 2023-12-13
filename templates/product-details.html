@@ -4,13 +4,15 @@
    <!-- ======= product Details Section ======= -->
    <section id="product-details" class="product-details">
     <div class="container">
+        <div class="return-back">
+           <a href="javascript:history.back()" class="bi bi-arrow-left-circle me-2"> Return Back</a>
+        </div>
 
       <div class="row gy-6">
 
         <div class="col-lg-6">
           <div class="product-details-slider swiper">
             <div class="swiper-wrapper align-items-center">
-
               <div class="swiper-slide">
                 <img src="{{ flower.image }}" alt="{{ flower.name }}">
               </div>
@@ -29,14 +31,14 @@
             <ul>
               <li><strong>Description</strong>: {{ flower.description }}</li>
               <li><strong>Price</strong>: ${{ flower.price }}</li>
-              <li><strong>Personality</strong>: {{ flower.personality }}</li>
-              <li><strong>Occasion</strong>: {{ flower.occasion }}</li>
+              <li><strong>Flowers Details</strong>: {{ flower.bouquet_flowers | join(', ') }}</li>
+              <li><strong>Care Instructions</strong>: {{ flower.instructions }}</li>
             </ul>
           </div>
           <div class="product-description">
             <h4>Designed To Delight</h4>
             <p>
-              We have a simple goal – delight our customers with flowers that are high quality, fresh, and beautiful. While we may occasionally need to substitute for color or flower variety, we promise that the blooms you receive will be fresh and wow you or your gift recipient. 
+              We have a simple goal – delight our customers with flowers that are high quality, fresh, and beautiful. While we may occasionally need to substitute for color or flower variety, we promise that the blooms you receive will be fresh and wow you or your gift recipient.
             </p>
           </div>
         </div>
@@ -46,4 +48,3 @@
     </div>
   </section><!-- End product Details Section -->
 {% endblock %}
-

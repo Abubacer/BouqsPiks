@@ -31,14 +31,21 @@
 
                     <div class="form-group">
                         <label for="occasion">Select Occasion:</label>
-                        <input type="text" class="form-control" id="occasion" name="occasion" placeholder="e.g., Birthday, Anniversary">
+                        <select class="form-control" id="occasion" name="occasion">
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="get Well">Get Well</option>
+                            <option value="date">Date</option>
+                            <option value="i'm Sorry">I'm Sorry</option>
+                            <option value="i Miss You">I Miss You</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="budget">Select Your Budget:</label>
-                        <input type="number" class="form-control" id="budget" name="budget" required>
+                        <input type="number" class="form-control" id="budget" name="budget" placeholder="Starting from $10" required>
                     </div>
-                    
+
                     <div class="text-center">
                     <button type="submit" class="btn text-center mb-4">Get Recommendations</button>
                     </div>

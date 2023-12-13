@@ -206,7 +206,7 @@ section {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -360,7 +360,7 @@ section {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: palevioletred;
@@ -1046,7 +1046,12 @@ section {
 # product Details
 --------------------------------------------------------------*/
 .product-details {
-  padding-top: 140px;
+  padding-top: 100px;
+  background-color: white;
+}
+
+.product-details .return-back {
+  margin-bottom: 20px;
 }
 
 .product-details .product-details-slider img {
@@ -1492,7 +1497,7 @@ section {
   font-family: "Nunito", sans-serif;
   margin-top: 3px;
   margin-bottom: 15px;
-  
+
 }
 
 .footer .footer-top .footer-info p {
@@ -1756,3 +1761,4 @@ section {
   border-radius: 6.25rem;
   opacity: .5
 }
+

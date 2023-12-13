@@ -1,6 +1,15 @@
-""" Sets up a Flask server to handle incoming requests """
+"""
+BouqsPiks Application.
 
-from flask import Flask, render_template, request, jsonify
+This module sets up a Flask server to handle incoming requests related to a flower shop website.
+
+Usage:
+    - Run the application to start the server.
+    - Access different pages such as the home, contact, flower recommender, and product details.
+
+"""
+
+from flask import Flask, render_template, request
 import json
 
 
@@ -26,25 +35,50 @@ def get_flower_details_by_id(flower_id, flower_data):
 
 @app.route('/')
 def home():
-    """ Serves the landing html page """
+    """
+    Serves the landing HTML page.
+
+    Returns:
+        str: Rendered HTML content for the home page.
+    """
     return render_template('index.html')
 
 
 @app.route('/contact')
 def contact():
-    """ Serves the contact page """
+    """
+    Serves the contact page.
+
+    Returns:
+        str: Rendered HTML content for the contact page.
+    """
     return render_template('contact.html')
 
 
 @app.route('/flower_recommender')
 def flower_recommender():
-    """ Serves the flower recommender page """
+    """
+    Serves the flower recommender page.
+
+    Returns:
+        str: Rendered HTML content for the flower recommender page.
+    """
     return render_template('flower_recommender.html')
 
 
 @app.route('/product-details/<int:flower_id>')
 def flower_details(flower_id):
-    """ Serves the flower product details page """
+    """
+    Serves the flower product details page.
+
+    Args:
+        flower_id (int): The ID of the flower for which details are
+                         requested.
+
+    Returns:
+        str: Rendered HTML content for the flower product details page
+             or 404 page if the flower is not found.
+    """
     flower = get_flower_details_by_id(flower_id, flower_data)
 
     if flower is not None:
@@ -57,17 +91,21 @@ def flower_details(flower_id):
 def get_recommendations():
     """
     Retrieves user inputs, encodes them, and generates recommendations.
+
+    Returns:
+        str: Rendered HTML content for the recommendations page.
     """
     gender = request.form.get('gender')
     personality = request.form.get('personality')
     occasion = request.form.get('occasion')
     budget_option = request.form.get('budget')
 
-    print("Received Form Values:")
-    print("Gender:", gender)
-    print("Personality:", personality)
-    print("Occasion:", occasion)
-    print("Budget:", budget_option)
+    # Test the request.form.get values
+    # print("Received Form Values:")
+    # print("Gender:", gender)
+    # print("Personality:", personality)
+    # print("Occasion:", occasion)
+    # print("Budget:", budget_option)
 
     filtered_flowers = filter_flowers(gender, personality, occasion, budget_option)
 
@@ -76,18 +114,39 @@ def get_recommendations():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    """ Error handlers for 404 errors """
+    """
+    Error handler for 404 errors.
+
+    Returns:
+        str: Rendered HTML content for the 404 error page.
+    """
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    """ Error handlers for 500 errors """
+    """
+    Error handler for 500 errors.
+
+    Returns:
+        str: Rendered HTML content for the 404 error page.
+    """
     return render_template('500.html'), 500
 
 
 def filter_flowers(gender, personality, occasion, budget_option):
-    """ Filters flowers data based on user input """
+    """
+    Filters flowers data based on user input.
+
+    Args:
+        gender (str): User-selected gender filter.
+        personality (str): User-selected personality filter.
+        occasion (str): User-selected occasion filter.
+        budget_option (str): User-selected budget filter.
+
+    Returns:
+        list: List of filtered flower data.
+    """
     filtered_flowers = []
     for flower in flower_data:
         if (
